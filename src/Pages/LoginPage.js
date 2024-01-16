@@ -42,7 +42,7 @@ const LoginPage = () => {
 
   return (
     <IonPage>
-      <IonContent className="ion-padding" fullscreen>
+      <IonContent className="ion-padding">
       <IonImg src={FloatingCirlceTop} alt="Circle" className="floating-circle" style={floatingCircleStyleTop}/>
       <IonGrid style={topSpacingStyles}>
           <IonRow className="ion-justify-content-center ion-align-items-center">

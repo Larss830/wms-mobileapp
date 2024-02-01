@@ -22,36 +22,36 @@
 
   --ion-color-success: #2dd36f;
   --ion-color-success-rgb: 45, 211, 111;
-  --ion-color-success-contrast: #000000;
-  --ion-color-success-contrast-rgb: 0, 0, 0;
+  --ion-color-success-contrast: #707070;
+  --ion-color-success-contrast-rgb: 112,112,112;
   --ion-color-success-shade: #28ba62;
   --ion-color-success-tint: #42d77d;
 
   --ion-color-warning: #ffc409;
   --ion-color-warning-rgb: 255, 196, 9;
-  --ion-color-warning-contrast: #000000;
-  --ion-color-warning-contrast-rgb: 0, 0, 0;
+  --ion-color-warning-contrast: #707070;
+  --ion-color-warning-contrast-rgb: 112,112,112;
   --ion-color-warning-shade: #e0ac08;
   --ion-color-warning-tint: #ffca22;
 
   --ion-color-danger: #ed6d84;
   --ion-color-danger-rgb: 237, 109, 132;
-  --ion-color-danger-contrast: #000000;
-  --ion-color-danger-contrast-rgb: 0, 0, 0;
+  --ion-color-danger-contrast: #707070;
+  --ion-color-danger-contrast-rgb: 112,112,112;
   --ion-color-danger-shade: #d16074;
   --ion-color-danger-tint: #ef7c90;
 
   --ion-color-light: #ffffff;
   --ion-color-light-rgb: 255, 255, 255;
-  --ion-color-light-contrast: #000000;
-  --ion-color-light-contrast-rgb: 0, 0, 0;
+  --ion-color-light-contrast: #707070;
+  --ion-color-light-contrast-rgb: 112,112,112;
   --ion-color-light-shade: #e0e0e0;
   --ion-color-light-tint: #ffffff;
 
   --ion-color-medium: #d8d8d8;
   --ion-color-medium-rgb: 216, 216, 216;
-  --ion-color-medium-contrast: #000000;
-  --ion-color-medium-contrast-rgb: 0, 0, 0;
+  --ion-color-medium-contrast: #707070;
+  --ion-color-medium-contrast-rgb:112,112,112;
   --ion-color-medium-shade: #bebebe;
   --ion-color-medium-tint: #dcdcdc;
 
@@ -63,4 +63,55 @@
   --ion-color-dark-tint: #7e7e7e;
 
   --ion-font-family: "Poppins", "Helvetica Neue", sans-serif;
+}
+
+/* Custom ready classes */
+
+.text-medium {
+  font-weight: 600;
+}
+.bold {
+  font-weight: bold;
+}
+.box-shadow {
+  box-shadow: #00000029 0 0 4px;
+}
+.curved {
+  border-radius: 25px;
+}
+.app-padding {
+  padding: 40px 30px;
+}
+.small-padding{
+  padding: .5em 1em !important;
+}
+
+/* Login page styles */
+
+.login-page .login-circle-top {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  max-width: 120px !important;
+}
+.login-page .login-circle-bottom {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 100%;
+  max-width: 190px !important;
+}
+
+/* Invoices page styles */
+
+.invoices-search ion-icon {
+  left: auto !important;
+  right: 10px !important;
+}
+.invoices-search .searchbar-input {
+  padding: 6px 40px 6px 20px;
+  box-shadow: none;
+  border: 1px solid var(--ion-color-primary);
+  border-radius: 50px;
 }

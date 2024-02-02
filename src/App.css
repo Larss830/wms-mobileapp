@@ -79,9 +79,9 @@
 .curved {
   border-radius: 25px;
 }
-.app-padding {
+/* .app-padding {
   padding: 40px 30px;
-}
+} */
 .small-padding{
   padding: .5em 1em !important;
 }

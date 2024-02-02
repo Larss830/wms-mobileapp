@@ -4,11 +4,11 @@ import { IonInput, IonItem, IonList, IonButton } from "@ionic/react";
 const Form = ({ formHeading, buttonText, inputFields }) => {
   return (
     <>
-      <h3 className="login-heading">{formHeading}</h3>
-      <IonList className="ion-margin-bottom">
+      <h3 className="login-heading" color="dark">{formHeading}</h3>
+      <IonList className="ion-margin-bottom" style={{background: 'transparent'}}>
         <form>
           {inputFields.map((item) => (
-            <IonItem key={item.key}>
+            <IonItem key={item.key} style={{background: 'transparent'}}>
               <IonInput
                 label={item.label}
                 labelPlacement="floating"

@@ -18,7 +18,7 @@ const Login = () => {
             <IonGrid>
                 <IonRow className='ion-justify-content-center ion-text-center'>
                     <IonImg src={circle1} className='login-circle-top' style={{zIndex:-1}}/>
-                    <IonCol size='10' sizeMd='8' sizeLg='8' className='ion-justify-content-start ion-align-items-center' style={{marginTop: '175px'}}>
+                    <IonCol size='10' sizeMd='8' sizeLg='8' className='ion-justify-content-start ion-align-items-center' style={{marginTop: '25%'}}>
                         <IonImg src={wmsLogo} style={{maxWidth: '300px', margin: 'auto'}}/>
                         <Form formHeading='Login to your account' buttonText='Login' inputFields={loginFields} />
                         <p>Lost your password?</p>

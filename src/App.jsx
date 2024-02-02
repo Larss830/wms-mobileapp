@@ -12,7 +12,6 @@ function App() {
     <IonApp>
       <IonPage>
         <NavigationTabs />
-        {/* <Dashboard /> */}
       </IonPage>
     </IonApp>
   )

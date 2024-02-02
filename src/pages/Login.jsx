@@ -1,6 +1,6 @@
 import React from 'react'
 import wmsLogo from '../assets/WMS Logo - Horizontal.png'
-import circle1 from '../assets/floating-circle-top.webp'
+import circle1 from '../assets/floating-circle-top.png'
 import circle2 from '../assets/floating-circle-bottom.webp'
 import { IonPage, IonGrid, IonRow, IonCol, IonContent, IonImg} from '@ionic/react';
 import Form from '../components/Form'

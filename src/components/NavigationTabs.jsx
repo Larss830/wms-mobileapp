@@ -12,6 +12,8 @@ import {
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import { Route, Redirect } from "react-router";
+import { Link } from "react-router-dom";
+
 import {
   barChartOutline,
   receiptOutline,
@@ -153,14 +155,13 @@ const NavigationTabs = () => {
         </IonFabButton>
         <IonFabList side="top">
           {floatingTabRoutingButtons.map((button) => (
-            <IonFabButton
-              key={button.key}
-              type="button"
-              color="light"
-              href={button.tabLink}
-            >
-              <IonIcon icon={button.tabIcon}></IonIcon>
-            </IonFabButton>
+            <Link key={button.key} to={button.tabLink}>
+              {" "}
+              {/* Use Link component */}
+              <IonFabButton key={button.key} type="button" color="light">
+                <IonIcon icon={button.tabIcon}></IonIcon>
+              </IonFabButton>
+            </Link>
           ))}
         </IonFabList>
       </IonFab>

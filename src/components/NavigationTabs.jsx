@@ -68,7 +68,16 @@ const NavigationTabs = () => {
       tabName: "profile",
       tabLink: "/profile",
       tabIcon: personCircleOutline,
-      tabPageComponent: <Profile profileName="Jon A. Tan" profilePosition="Company Owner" profilePhone="+639123456789" profileEmail="jdegs@mail.com" profileWebsite="Project Zealous" profileWebLink="/"/>,
+      tabPageComponent: (
+        <Profile
+          profileName="Jon A. Tan"
+          profilePosition="Company Owner"
+          profilePhone="+639123456789"
+          profileEmail="jdegs@mail.com"
+          profileWebsite="Project Zealous"
+          profileWebLink="/"
+        />
+      ),
     },
   ];
 
@@ -148,7 +157,8 @@ const NavigationTabs = () => {
               key={button.key}
               type="button"
               color="light"
-              href={button.tabLink}>
+              href={button.tabLink}
+            >
               <IonIcon icon={button.tabIcon}></IonIcon>
             </IonFabButton>
           ))}

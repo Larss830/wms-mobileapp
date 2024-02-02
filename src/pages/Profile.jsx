@@ -83,7 +83,7 @@ const Profile = ({profileName, profilePosition, profilePhone, profileEmail, prof
             {profileData.profileLinks.profileEmail ? (
               <p>
                 <a
-                  href={`tel:${profileData.profileLinks.profileEmail}`}
+                  href={`mailto:${profileData.profileLinks.profileEmail}`}
                   style={profileLinksStyle}
                 >
                   <IonIcon icon={mail} color="primary"></IonIcon>
@@ -96,7 +96,7 @@ const Profile = ({profileName, profilePosition, profilePhone, profileEmail, prof
             {profileData.profileLinks.profileWebsite ? (
               <p>
                 <a
-                  href={`tel:${profileData.profileLinks.profileWebLink}`}
+                  href={profileWebLink}
                   style={profileLinksStyle}
                 >
                   <IonIcon icon={link} color="primary"></IonIcon>

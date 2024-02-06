@@ -2,8 +2,6 @@ import React from "react";
 import {
   IonPage,
   IonContent,
-  IonImg,
-  IonAvatar,
   IonItem,
   IonLabel,
   IonIcon,
@@ -13,6 +11,7 @@ import {
 import { call, mail, link, settings } from "ionicons/icons";
 import userAvatar from "../assets/male-avatar-placeholder.png";
 import { Link } from 'react-router-dom';
+import ProfileHeader from "../components/ProfileHeader";
 
 const Profile = ({profileName, profilePosition, profilePhone, profileEmail, profileWebsite, profileWebLink}) => {
   const profileData = {
@@ -25,22 +24,6 @@ const Profile = ({profileName, profilePosition, profilePhone, profileEmail, prof
       profileWebLink: profileWebLink,
     },
   };
-  const profileNameStyles = {
-    marginBottom: "0",
-    fontSize: "20px",
-  };
-
-  const profilePositionStyles = {
-    fontWeight: 600,
-    margin: 0,
-    fontSize: "14px",
-  };
-
-  const profileHeadImgSize = {
-    width: "80px",
-    height: "80px",
-  };
-
   const profileLinksStyle = {
     color: "var(--ion-text-color)",
     display: "flex",
@@ -52,7 +35,7 @@ const Profile = ({profileName, profilePosition, profilePhone, profileEmail, prof
   };
 
   return (
-    <IonPage className="profile-page ion-padding">
+    <IonPage className="profile-page">
       <IonContent>
         <IonFab slot="fixed" vertical="top" horizontal="end">
           <Link to="/edit-profile">
@@ -61,19 +44,7 @@ const Profile = ({profileName, profilePosition, profilePhone, profileEmail, prof
             </IonFabButton>
           </Link>
         </IonFab>
-        <IonItem>
-          <IonAvatar slot="start" style={profileHeadImgSize}>
-            <IonImg
-              alt="Silhouette of a person's head"
-              src={userAvatar}
-              style={profileHeadImgSize}
-            />
-          </IonAvatar>
-          <IonLabel class="ion-text-nowrap">
-            <h6 style={profileNameStyles}>{profileData.profileName}</h6>
-            <p style={profilePositionStyles}>{profileData.profilePosition}</p>
-          </IonLabel>
-        </IonItem>
+        <ProfileHeader profileName={profileData.profileName} userAvatar={userAvatar} profilePosition={profileData.profilePosition}/>
 
         <IonItem>
           <IonLabel class="ion-text-nowrap ion-align-items-center">

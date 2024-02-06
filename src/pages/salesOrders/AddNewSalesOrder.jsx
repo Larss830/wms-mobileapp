@@ -4,7 +4,7 @@ import { IonPage, IonRow, IonTitle, IonCol, IonText, IonContent, IonItem, IonSel
 const AddNewSalesOrder = () => {
   return (
     <>
-      <IonPage className='ion-padding'>
+      <IonPage>
         <IonContent>
           <IonRow className='ion-padding-bottom'>
             <IonTitle className='ion-text-center'>Create Sales Order</IonTitle>

@@ -9,6 +9,7 @@ import {
   IonFabButton,
   IonFabList,
   IonImg,
+  IonLabel,
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 
@@ -27,7 +28,7 @@ import {
 
 import Login from "../pages/Login";
 import Dashboard from "../pages/Dashboard";
-import Invoices from "../pages/Invoices";
+import InvoicesArchive from "../pages/invoice/InvoicesArchive";
 import Profile from "../pages/Profile";
 import EditProfile from "../pages/profile/EditProfile";
 
@@ -36,6 +37,7 @@ import AddNewProduct from "../pages/products/AddNewProduct";
 import AddNewInvoice from "../pages/invoice/AddNewInvoice";
 import AddNewPurchaseOrder from "../pages/purchaseOrders/AddNewPurchaseOrder";
 import AddNewSalesOrder from "../pages/salesOrders/AddNewSalesOrder";
+import ProductsArchive from "../pages/products/ProductsArchive";
 
 const NavigationTabs = () => {
   const navTabRoutingButtons = [
@@ -65,7 +67,7 @@ const NavigationTabs = () => {
       tabName: "invoices",
       tabLink: "/invoices",
       tabIcon: newspaperOutline,
-      tabPageComponent: <Invoices />,
+      tabPageComponent: <InvoicesArchive />,
     },
     {
       key: "tab-profile",
@@ -92,6 +94,7 @@ const NavigationTabs = () => {
       tabLink: "/add-sales-order",
       tabIcon: listOutline,
       tabPageComponent: <AddNewSalesOrder />,
+      label: "Add New Sales Order",
     },
     {
       key: "float-2",
@@ -99,6 +102,7 @@ const NavigationTabs = () => {
       tabLink: "/add-purhcase-order",
       tabIcon: cashOutline,
       tabPageComponent: <AddNewPurchaseOrder />,
+      label: "Add New Purchase Order",
     },
     {
       key: "float-3",
@@ -106,6 +110,7 @@ const NavigationTabs = () => {
       tabLink: "/add-new-invoice",
       tabIcon: pieChartOutline,
       tabPageComponent: <AddNewInvoice />,
+      label: "Add New Invoice",
     },
     {
       key: "float-4",
@@ -113,6 +118,7 @@ const NavigationTabs = () => {
       tabLink: "/add-new-product",
       tabIcon: listOutline,
       tabPageComponent: <AddNewProduct />,
+      label: "Add New Product",
     },
   ];
 
@@ -143,6 +149,12 @@ const NavigationTabs = () => {
             render={() => <EditProfile />}
             exact={true}
           />
+          <Route
+            key={"products"}
+            path={"/products"}
+            render={() => <ProductsArchive />}
+            exact={true}
+          />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
           {navTabRoutingButtons.map((button) => (
@@ -166,6 +178,8 @@ const NavigationTabs = () => {
               <IonFabButton
                 type="button"
                 color="light"
+                size= "medium"
+                aria-label={button.ariaLabel} // Add aria-label attribute
               >
                 <IonIcon icon={button.tabIcon}></IonIcon>
               </IonFabButton>

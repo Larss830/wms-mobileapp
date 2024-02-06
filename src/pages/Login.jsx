@@ -20,7 +20,9 @@ const Login = () => {
                     <IonImg src={circle1} className='login-circle-top' style={{zIndex:-1}}/>
                     <IonCol size='10' sizeMd='8' sizeLg='8' className='ion-justify-content-start ion-align-items-center' style={{marginTop: '25%'}}>
                         <IonImg src={wmsLogo} style={{maxWidth: '300px', margin: 'auto'}}/>
-                        <Form formHeading='Login to your account' buttonText='Login' inputFields={loginFields} />
+                        <form action="">
+                            <Form formHeading='Login to your account' buttonText='Login' inputFields={loginFields} />
+                        </form>
                         <p>Lost your password?</p>
                     </IonCol>
                     <IonImg src={circle2} className='login-circle-bottom' style={{zIndex:-1}}></IonImg>

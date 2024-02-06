@@ -11,6 +11,7 @@ import {
   IonImg,
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
+
 import { Route, Redirect } from "react-router";
 import { Link } from "react-router-dom";
 
@@ -28,6 +29,7 @@ import Login from "../pages/Login";
 import Dashboard from "../pages/Dashboard";
 import Invoices from "../pages/Invoices";
 import Profile from "../pages/Profile";
+import EditProfile from "../pages/profile/EditProfile";
 
 import wmsLogo from "../assets/wms-small-icon.webp";
 import AddNewProduct from "../pages/products/AddNewProduct";
@@ -135,6 +137,12 @@ const NavigationTabs = () => {
               exact={true}
             />
           ))}
+          <Route
+            key={"link-edit-profile"}
+            path={"/edit-profile"}
+            render={() => <EditProfile />}
+            exact={true}
+          />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
           {navTabRoutingButtons.map((button) => (
@@ -148,17 +156,17 @@ const NavigationTabs = () => {
           ))}
         </IonTabBar>
       </IonTabs>
-
       <IonFab vertical="bottom" horizontal="center" slot="fixed" edge="false">
         <IonFabButton type="button" color="light">
           <IonImg src={wmsLogo} className="login-circle-top" />
         </IonFabButton>
         <IonFabList side="top">
           {floatingTabRoutingButtons.map((button) => (
-            <Link key={button.key} to={button.tabLink}>
-              {" "}
-              {/* Use Link component */}
-              <IonFabButton key={button.key} type="button" color="light">
+            <Link to={button.tabLink} key={button.key}>
+              <IonFabButton
+                type="button"
+                color="light"
+              >
                 <IonIcon icon={button.tabIcon}></IonIcon>
               </IonFabButton>
             </Link>

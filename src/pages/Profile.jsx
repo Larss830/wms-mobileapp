@@ -7,9 +7,12 @@ import {
   IonItem,
   IonLabel,
   IonIcon,
+  IonFab,
+  IonFabButton,
 } from "@ionic/react";
-import { call, mail, link } from "ionicons/icons";
+import { call, mail, link, settings } from "ionicons/icons";
 import userAvatar from "../assets/male-avatar-placeholder.png";
+import { Link } from 'react-router-dom';
 
 const Profile = ({profileName, profilePosition, profilePhone, profileEmail, profileWebsite, profileWebLink}) => {
   const profileData = {
@@ -49,8 +52,15 @@ const Profile = ({profileName, profilePosition, profilePhone, profileEmail, prof
   };
 
   return (
-    <IonPage className="profile-page app-padding">
+    <IonPage className="profile-page ion-padding">
       <IonContent>
+        <IonFab slot="fixed" vertical="top" horizontal="end">
+          <Link to="/edit-profile">
+            <IonFabButton color="light" size="small">
+              <IonIcon icon={settings} color="primary"></IonIcon>
+            </IonFabButton>
+          </Link>
+        </IonFab>
         <IonItem>
           <IonAvatar slot="start" style={profileHeadImgSize}>
             <IonImg

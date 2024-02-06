@@ -88,6 +88,9 @@
 .small-padding{
   padding: .5em 1em !important;
 }
+.small-text {
+  font-size: 10px;
+}
 
 /* Login page styles */
 
@@ -117,4 +120,9 @@
   box-shadow: none;
   border: 1px solid var(--ion-color-primary);
   border-radius: 50px;
+}
+
+/* Edit Profile Page */
+.edit-profile-page .profile-image {
+  border: 5px solid var(--ion-color-primary);
 }

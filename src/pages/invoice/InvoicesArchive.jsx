@@ -11,9 +11,9 @@ import {
   IonIcon,
   IonCard,
   IonText,
-
 } from "@ionic/react";
 import { menuOutline } from "ionicons/icons";
+import { Link } from "react-router-dom";
 
 const invoiceList = [
   { invoiceNum: "0001", invoiceDate: "01-01-2024", invoicePrice: 1020.0 },
@@ -28,6 +28,10 @@ const invoiceList = [
   { invoiceNum: "0010", invoiceDate: "01-05-2024", invoicePrice: 750.0 },
 ];
 
+const cardTextStyles = {
+  textDecoration: "none",
+};
+
 const InvoicesArchive = () => {
   return (
     <>
@@ -39,9 +43,9 @@ const InvoicesArchive = () => {
             </IonRow>
             <IonRow className="ion-align-items-center">
               <IonCol size="auto">
-                  <IonButton>
-                    <IonIcon slot="icon-only" icon={menuOutline}></IonIcon>
-                  </IonButton>
+                <IonButton>
+                  <IonIcon slot="icon-only" icon={menuOutline}></IonIcon>
+                </IonButton>
               </IonCol>
               <IonCol>
                 <IonSearchbar className="archive-search curved" />
@@ -50,26 +54,38 @@ const InvoicesArchive = () => {
             <IonRow>
               <IonCol>
                 {invoiceList.map((item) => (
-                  <IonCard
-                    className="ion-padding ion-margin-bottom box-shadow curved"
+                  <Link
+                    to={{
+                      pathname: `/single-invoice/num-${item.invoiceNum}`,
+                      state: {
+                        invoiceNum: item.invoiceNum,
+                        invoiceDate: item.invoiceDate,
+                        invoicePrice: item.invoicePrice,
+                      },
+                    }}
+                    style={cardTextStyles}
                     key={item.invoiceNum}
                   >
-                    <IonRow>
-                      <IonCol size="6">
-                        <IonText className="bold">
-                          INVOICE - {item.invoiceNum}
-                        </IonText>
-                        <br />
-                        <IonText>{item.invoiceDate}</IonText>
-                      </IonCol>
-                      <IonCol
-                        size="6"
-                        className="ion-text-right ion-align-items-center"
-                      >
-                        <IonText>${item.invoicePrice}</IonText>
-                      </IonCol>
-                    </IonRow>
-                  </IonCard>
+                    <IonCard className="ion-padding ion-margin-bottom box-shadow curved">
+                      <IonRow>
+                        <IonCol size="6">
+                          <IonText className="bold">
+                            INVOICE - {item.invoiceNum}
+                          </IonText>
+                          <br />
+                          <IonText style={cardTextStyles}>
+                            {item.invoiceDate}
+                          </IonText>
+                        </IonCol>
+                        <IonCol
+                          size="6"
+                          className="ion-text-right ion-align-items-center"
+                        >
+                          <IonText>${item.invoicePrice}</IonText>
+                        </IonCol>
+                      </IonRow>
+                    </IonCard>
+                  </Link>
                 ))}
               </IonCol>
             </IonRow>

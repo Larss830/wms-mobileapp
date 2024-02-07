@@ -54,30 +54,35 @@ const MainSideMenu = () => {
   const tabBarLayout = {
     display: "flex",
     flexDirection: "column",
-    minHeight: "6em",
+    minHeight: "100px",
     marginTop: "7em",
   };
 
   const tabButtonStyle = {
-    minHeight: "3em",
+    minHeight: "50px",
     maxWidth: "100%",
     width: "100%",
     marginRight: "10em",
     border: "none",
   };
 
-  const menuLinkTextStyle ={
-    margin:'10px 0',
-  }
+  const menuLinkTextStyle = {
+    margin: "10px 0",
+  };
 
   return (
     <>
-      <IonMenu contentId="main-content" side="end" maxEdgeStart="1000">
-          <ProfileHeader
-            profileName={"John Doe"}
-            userAvatar={userAvatar}
-            profilePosition={"Web Developer"}
-          />
+      <IonMenu contentId="main-content" side="end" maxEdgeStart="500">
+        <IonGrid>
+          <IonRow>
+            <ProfileHeader
+              profileName={"John Doe"}
+              userAvatar={userAvatar}
+              profilePosition={"Web Developer"}
+            />
+          </IonRow>
+        </IonGrid>
+
         <IonTabs style={tabsLayout}>
           <IonRouterOutlet></IonRouterOutlet>
           <IonTabBar slot="top" style={tabBarLayout}>

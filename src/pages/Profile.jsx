@@ -37,7 +37,6 @@ const Profile = ({profileName, profilePosition, profilePhone, profileEmail, prof
 
   return (
     <IonPage className="profile-page" id="main-content">
-      <MainSideMenu />
       <IonContent>
         <IonFab slot="fixed" vertical="top" horizontal="end">
           <Link to="/edit-profile">

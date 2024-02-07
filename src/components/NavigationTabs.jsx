@@ -38,6 +38,7 @@ import AddNewPurchaseOrder from "../pages/purchaseOrders/AddNewPurchaseOrder";
 import AddNewSalesOrder from "../pages/salesOrders/AddNewSalesOrder";
 import ProductsArchive from "../pages/products/ProductsArchive";
 import MainSideMenu from "./MainSideMenu";
+import SingleInvoice from "../pages/invoice/SingleInvoice";
 
 const NavigationTabs = () => {
   const navTabRoutingButtons = [
@@ -154,6 +155,12 @@ const NavigationTabs = () => {
             key={"products"}
             path={"/products"}
             render={() => <ProductsArchive />}
+            exact={true}
+          />
+          <Route
+            key={"singleInvoice"}
+            path={"/single-invoice/num-:username"}
+            render={() => <SingleInvoice/>}
             exact={true}
           />
         </IonRouterOutlet>

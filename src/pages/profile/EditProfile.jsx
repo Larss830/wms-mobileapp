@@ -30,7 +30,7 @@ const EditProfile = () => {
 
   return (
     <>
-      <IonPage className="edit-profile-page">
+      <IonPage className="edit-profile-page" id='main-content'>
         <IonContent>
           <IonRow className="ion-justify-content-center ion-padding">
             <IonCol className="ion-justify-content-center ion-align-items-center">

@@ -9,9 +9,8 @@ const Form = ({ formHeading, buttonText, inputFields }) => {
         {inputFields.map((item) => (
           item.type == 'html' ? <IonRow key={item.key} className='ion-margin-start'> <IonText className={item.customClasses}>{item.content}</IonText>
             </IonRow> : 
-            <IonItem>
+            <IonItem key={item.key}>
             <IonInput
-             key={item.key}
               label={item.label}
               labelPlacement="floating"
               placeholder={item.placeholder}

@@ -88,6 +88,21 @@
 .small-text {
   font-size: 10px;
 }
+/*Global Styles*/
+
+.fab-overlay {
+  position:absolute;
+  width:100%;
+  height: 100%;
+  z-index:0;
+  background:#ffffff00;
+  bottom:56px;
+  transition: .5s ease;
+}
+.fab-overlay.fab-opened {
+  background:#ffffff99;
+  z-index:101;
+}
 
 /*Main Menu Styles*/
 ion-menu .tab-selected{

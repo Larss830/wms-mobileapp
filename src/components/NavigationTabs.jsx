@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import {
   IonTabs,
   IonTabBar,
@@ -123,8 +123,20 @@ const NavigationTabs = () => {
     },
   ];
 
+  const [isActivated, setIsActivated] = useState(false);
+
+  useEffect(() => {
+    const tabsInner = document.querySelector('.ion-page');
+    isActivated ? tabsInner.classList.add('fab-open') : tabsInner.classList.remove('fab-open');
+  }, [isActivated]);
+
+  const handleActivation = () => {
+    isActivated ? setIsActivated(false) : setIsActivated(true)
+  };
+
   return (
     <IonReactRouter>
+        <div className={`fab-overlay ${isActivated ? 'fab-opened' : ''}`}></div>
       <MainSideMenu/>
       <IonTabs>
         <IonRouterOutlet>
@@ -176,7 +188,7 @@ const NavigationTabs = () => {
           ))}
         </IonTabBar>
       </IonTabs>
-      <IonFab vertical="bottom" horizontal="center" slot="fixed" edge="false">
+      <IonFab vertical="bottom" horizontal="center" slot="fixed" edge="false" activated={isActivated} onClick={handleActivation}>
         <IonFabButton type="button" color="light">
           <IonImg src={wmsLogo} className="login-circle-top" />
         </IonFabButton>

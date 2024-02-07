@@ -11,11 +11,9 @@ import {
   IonIcon,
   IonCard,
   IonText,
-  IonMenuToggle,
 
 } from "@ionic/react";
 import { menuOutline } from "ionicons/icons";
-import SideMenu from "../../components/SideMenu";
 
 const invoiceList = [
   { invoiceNum: "0001", invoiceDate: "01-01-2024", invoicePrice: 1020.0 },
@@ -33,7 +31,6 @@ const invoiceList = [
 const InvoicesArchive = () => {
   return (
     <>
-      <SideMenu />
       <IonPage className="invoices-page" id="main-content">
         <IonContent>
           <IonGrid>
@@ -42,14 +39,12 @@ const InvoicesArchive = () => {
             </IonRow>
             <IonRow className="ion-align-items-center">
               <IonCol size="auto">
-                <IonMenuToggle>
                   <IonButton>
                     <IonIcon slot="icon-only" icon={menuOutline}></IonIcon>
                   </IonButton>
-                </IonMenuToggle>
               </IonCol>
               <IonCol>
-                <IonSearchbar className="invoices-search curved" />
+                <IonSearchbar className="archive-search curved" />
               </IonCol>
             </IonRow>
             <IonRow>

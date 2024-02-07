@@ -1,33 +1,29 @@
 import React from "react";
 import {
   IonMenu,
-  IonPage,
   IonTabs,
   IonRouterOutlet,
   IonTabBar,
-  IonButton,
   IonTabButton,
-  IonMenuToggle,
-  IonContent,
-  IonLabel,
   IonText,
+  IonGrid,
+  IonRow,
 } from "@ionic/react";
-import ProfileHeader from "../components/ProfileHeader";
+import ProfileHeader from "./ProfileHeader";
 import userAvatar from "../assets/male-avatar-placeholder.png";
 import { Link } from "react-router-dom";
 import { Route } from "react-router";
 
-
 import InvoicesArchive from "../pages/invoice/InvoicesArchive";
 import ProductsArchive from "../pages/products/ProductsArchive";
 
-const SideMenu = () => {
+const MainSideMenu = () => {
   const menuLinks = [
     {
       key: "menu-products",
       tabName: "Products",
       tabLink: "/Products",
-      tabPageComponent: < ProductsArchive/>,
+      tabPageComponent: <ProductsArchive />,
     },
     {
       key: "menu-invoices",
@@ -58,24 +54,32 @@ const SideMenu = () => {
   const tabBarLayout = {
     display: "flex",
     flexDirection: "column",
-    minHeight: '10em',
-    marginTop: '6em'
+    minHeight: "6em",
+    marginTop: "7em",
   };
 
   const tabButtonStyle = {
-    minHeight: '2em',
+    minHeight: "3em",
+    maxWidth: "100%",
+    width: "100%",
+    marginRight: "10em",
+    border: "none",
   };
+
+  const menuLinkTextStyle ={
+    margin:'10px 0',
+  }
+
   return (
     <>
-      <IonMenu contentId="main-content">
-        <ProfileHeader
-          profileName={"John Doe"}
-          userAvatar={userAvatar}
-          profilePosition={"Web Developer"}
-        />
+      <IonMenu contentId="main-content" side="end" maxEdgeStart="1000">
+          <ProfileHeader
+            profileName={"John Doe"}
+            userAvatar={userAvatar}
+            profilePosition={"Web Developer"}
+          />
         <IonTabs style={tabsLayout}>
-          <IonRouterOutlet>
-          </IonRouterOutlet>
+          <IonRouterOutlet></IonRouterOutlet>
           <IonTabBar slot="top" style={tabBarLayout}>
             {menuLinks.map((link) => (
               <IonTabButton
@@ -84,7 +88,9 @@ const SideMenu = () => {
                 href={link.tabLink}
                 style={tabButtonStyle}
               >
-                <IonText>{link.tabName}</IonText>
+                <IonText>
+                  <h6 style={menuLinkTextStyle}>{link.tabName}</h6>
+                </IonText>
               </IonTabButton>
             ))}
           </IonTabBar>
@@ -94,4 +100,4 @@ const SideMenu = () => {
   );
 };
 
-export default SideMenu;
+export default MainSideMenu;

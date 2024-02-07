@@ -15,7 +15,7 @@ import {
 
 } from "@ionic/react";
 import { menuOutline } from "ionicons/icons";
-import SideMenu from "../../components/SideMenu";
+import SideMenu from "../../components/MainSideMenu";
 
 const productsList = [
   { productNum: "0001", productDate: "01-01-2024", productPrice: 1020.0 },
@@ -49,7 +49,7 @@ const ProductsArchive = () => {
                 </IonMenuToggle>
               </IonCol>
               <IonCol>
-                <IonSearchbar className="products-search curved" />
+                <IonSearchbar className="archive-search curved" />
               </IonCol>
             </IonRow>
             <IonRow>

@@ -82,14 +82,23 @@
 .curved {
   border-radius: 25px;
 }
-/* .app-padding {
-  padding: 40px 30px;
-} */
 .small-padding{
   padding: .5em 1em !important;
 }
 .small-text {
   font-size: 10px;
+}
+
+/*Main Menu Styles*/
+ion-menu .tab-selected{
+  background:var( --ion-color-primary-tint);
+  color:var( --ion-color-primary-contrast);
+  
+}
+
+ion-menu ion-tab-button{
+ transition: .4s ease;
+ border-radius: 25px;
 }
 
 /* Login page styles */
@@ -111,11 +120,11 @@
 
 /* Invoices page styles */
 
-.invoices-search ion-icon {
+.archive-search ion-icon {
   left: auto !important;
   right: 10px !important;
 }
-.invoices-search .searchbar-input {
+.archive-search .searchbar-input {
   padding: 6px 40px 6px 20px;
   box-shadow: none;
   border: 1px solid var(--ion-color-primary);

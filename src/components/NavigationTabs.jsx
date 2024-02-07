@@ -9,7 +9,6 @@ import {
   IonFabButton,
   IonFabList,
   IonImg,
-  IonLabel,
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 
@@ -38,6 +37,7 @@ import AddNewInvoice from "../pages/invoice/AddNewInvoice";
 import AddNewPurchaseOrder from "../pages/purchaseOrders/AddNewPurchaseOrder";
 import AddNewSalesOrder from "../pages/salesOrders/AddNewSalesOrder";
 import ProductsArchive from "../pages/products/ProductsArchive";
+import MainSideMenu from "./MainSideMenu";
 
 const NavigationTabs = () => {
   const navTabRoutingButtons = [
@@ -124,6 +124,7 @@ const NavigationTabs = () => {
 
   return (
     <IonReactRouter>
+      <MainSideMenu/>
       <IonTabs>
         <IonRouterOutlet>
           <Redirect exact path="/" to="/home" />

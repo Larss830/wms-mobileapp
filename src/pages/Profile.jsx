@@ -12,6 +12,7 @@ import { call, mail, link, settings } from "ionicons/icons";
 import userAvatar from "../assets/male-avatar-placeholder.png";
 import { Link } from 'react-router-dom';
 import ProfileHeader from "../components/ProfileHeader";
+import MainSideMenu from "../components/MainSideMenu";
 
 const Profile = ({profileName, profilePosition, profilePhone, profileEmail, profileWebsite, profileWebLink}) => {
   const profileData = {
@@ -35,7 +36,8 @@ const Profile = ({profileName, profilePosition, profilePhone, profileEmail, prof
   };
 
   return (
-    <IonPage className="profile-page">
+    <IonPage className="profile-page" id="main-content">
+      <MainSideMenu />
       <IonContent>
         <IonFab slot="fixed" vertical="top" horizontal="end">
           <Link to="/edit-profile">

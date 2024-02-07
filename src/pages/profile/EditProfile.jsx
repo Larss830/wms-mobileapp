@@ -31,7 +31,7 @@ const EditProfile = () => {
   return (
     <>
       <IonPage className="edit-profile-page">
-        <IonContent className="ion-padding">
+        <IonContent>
           <IonRow className="ion-justify-content-center ion-padding">
             <IonCol className="ion-justify-content-center ion-align-items-center">
               <IonRow className="ion-justify-content-center ion-margin-bottom">
@@ -55,7 +55,7 @@ const EditProfile = () => {
             </IonCol>
           </IonRow>
           <IonRow className='ion-padding-bottom'>
-            <form action="">
+            <form action="" style={{width: '100%', marginRight:'1em'}}>
               <Form formHeading='' buttonText='' inputFields={profileFields} />
               <IonRow className='ion-margin-top ion-margin-start'>
                 <IonText className='ion-margin-top'>Change password</IonText>

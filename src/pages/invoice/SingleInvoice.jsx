@@ -5,7 +5,7 @@ import { listOutline, cubeOutline, readerOutline } from "ionicons/icons";
 
 const SingleInvoice = () => {
   const location = useLocation();
-  const { invoiceNum, invoiceDate, invoicePrice } = location.state || {};
+  const { invoiceNum, DRNumber, invoiceDate, invoiceTime, invoicePrice, status } = location.state || {};
 
   const dataTextLayout ={
     display:'flex',
@@ -24,9 +24,10 @@ const SingleInvoice = () => {
             </IonRow>
             <IonRow>
               <IonCol>
-                <IonRow><IonText style={dataTextLayout}><strong><IonLabel>Invoice Number: </IonLabel></strong>{invoiceNum}</IonText></IonRow>
-                <IonRow><IonText style={dataTextLayout}><strong><IonLabel>Invoice Date: </IonLabel></strong>{invoiceDate}</IonText></IonRow>
-                <IonRow><IonText style={dataTextLayout}><strong><IonLabel>Invoice Price: </IonLabel></strong>${invoicePrice}</IonText></IonRow>
+                <IonRow><IonText style={dataTextLayout}><IonLabel style={{flexGrow: 0}}> DATE: </IonLabel><strong>{invoiceDate} {invoiceTime}</strong></IonText></IonRow>
+                <IonRow><IonText style={dataTextLayout}><IonLabel style={{flexGrow: 0}}>Invoice No. : </IonLabel><strong>{invoiceNum}</strong></IonText></IonRow>
+                <IonRow><IonText style={dataTextLayout}><IonLabel style={{flexGrow: 0}}>DR No. : </IonLabel><strong>{DRNumber}</strong></IonText></IonRow>
+                <IonRow><IonText style={dataTextLayout}><IonLabel style={{flexGrow: 0}}>Status: </IonLabel><strong>{status}</strong></IonText></IonRow>
               </IonCol>
             </IonRow>
             <IonRow>
@@ -44,6 +45,21 @@ const SingleInvoice = () => {
                 <IonCard style={{minHeight:'70px', display:'flex', justifyContent: 'center', alignItems:'center'}}>
                   <IonCardContent style={{display:'flex', justifyContent: 'center', alignItems:'center'}}><IonIcon icon={cubeOutline} size="large"></IonIcon></IonCardContent>
                 </IonCard>
+              </IonCol>
+            </IonRow>
+          </IonGrid>
+        </IonItem>
+        <IonItem>
+        <IonGrid>
+            <IonRow className="ion-padding-bottom">
+              <IonTitle className="ion-text-left">From</IonTitle>
+            </IonRow>
+            <IonRow>
+              <IonCol style={{padding:'0 2em'}}>
+                <IonRow><IonText style={dataTextLayout}><IonLabel>DATE: </IonLabel><strong>{invoiceDate} {invoiceTime}</strong></IonText></IonRow>
+                <IonRow><IonText style={dataTextLayout}><IonLabel>Invoice No. : </IonLabel><strong>{invoiceNum}</strong></IonText></IonRow>
+                <IonRow><IonText style={dataTextLayout}><IonLabel>DR No. : </IonLabel><strong>{DRNumber}</strong></IonText></IonRow>
+                <IonRow><IonText style={dataTextLayout}><IonLabel>Status: </IonLabel><strong>{status}</strong></IonText></IonRow>
               </IonCol>
             </IonRow>
           </IonGrid>

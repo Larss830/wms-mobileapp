@@ -56,6 +56,7 @@ const MainSideMenu = () => {
     flexDirection: "column",
     minHeight: "100px",
     marginTop: "7em",
+    border: 'none',
   };
 
   const tabButtonStyle = {
@@ -73,15 +74,13 @@ const MainSideMenu = () => {
   return (
     <>
       <IonMenu contentId="main-content" side="end" maxEdgeStart="500">
-        <IonGrid>
-          <IonRow>
+        <IonRow>
             <ProfileHeader
               profileName={"John Doe"}
               userAvatar={userAvatar}
               profilePosition={"Web Developer"}
             />
-          </IonRow>
-        </IonGrid>
+        </IonRow>
 
         <IonTabs style={tabsLayout}>
           <IonRouterOutlet></IonRouterOutlet>

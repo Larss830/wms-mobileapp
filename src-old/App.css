@@ -63,18 +63,12 @@
   --ion-color-dark-tint: #7e7e7e;
 
   --ion-font-family: "Poppins", "Helvetica Neue", sans-serif;
-
-  --ion-backdrop-color: #cccccc;
-  --ion-text-color: #707070;
 }
 
 /* Custom ready classes */
 .login-heading{
   font-size: 20px;
   color: var(--ion-color-dark);
-}
-.text-small{
-  font-size: 14px;
 }
 .text-medium {
   font-weight: 600;
@@ -92,7 +86,7 @@
   padding: .5em 1em !important;
 }
 .text-smaller {
-  font-size: 12px;
+  font-size: 10px;
 }
 /*Global Styles*/
 
@@ -106,13 +100,10 @@
   transition: .5s ease;
 }
 .fab-overlay.fab-opened {
-  background:#ffffffcc;
+  background:#ffffff99;
   z-index:101;
 }
-ion-backdrop {
-  opacity: 0.5;
-  background: var(--ion-color-dark);
-}
+
 /*Main Menu Styles*/
 ion-menu .tab-selected{
   background:var( --ion-color-primary-tint);
@@ -153,52 +144,9 @@ ion-menu ion-tab-button{
   box-shadow: none;
   border: 1px solid var(--ion-color-primary);
   border-radius: 50px;
-} 
+}
 
 /* Edit Profile Page */
 .edit-profile-page .profile-image {
   border: 5px solid var(--ion-color-primary);
-}
-
-ion-card#open-custom-dialog{
-  box-shadow: 0px 0px 4px #00000029;
-  border-radius: 25px;
-}
-
-.custom-modal .modal-wrapper{
-  width: 80%;
-  max-width: 350px;
-  margin: auto;
-  border-radius: 10px;
-  max-height: 80%;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.custom-modal {
-  --width: 80%;
-  --max-width: 350px;
-  --margin: auto;
-  --border-radius: 10px;
-  --height: fit-content;
-  --padding: 50px;
-  --box-sizing: border-box;
-  --box-shadow: 0px 0px 4px #00000029;
-}
-.popup-info-header{
-  padding-bottom: 0;
-}
-.popup-info-desc{
-  padding-top: 0;
-}
-.popup-info-header p{
-  margin-top: .2em;
-}
-.popup-info-header h6{
-  margin-bottom: .2em;
-}
-.popup-info-desc p {
-  margin: 0;
-  font-weight: 400;
-  color: var(--ion-color-medium);
 }

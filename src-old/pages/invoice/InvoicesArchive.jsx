@@ -52,7 +52,6 @@ const InvoicesArchive = () => {
                         invoiceTime: item.invoiceTime,
                         invoicePrice: item.invoicePrice,
                         status: item.status,
-
                       },
                     }}
                     style={cardTextStyles}

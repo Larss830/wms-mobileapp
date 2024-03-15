@@ -5,11 +5,11 @@ const Form = ({ formHeading, buttonText, inputFields }) => {
   return (
     <>
       {(formHeading != "") ? <h3 className="login-heading">{formHeading}</h3> : ""}
-      <IonList className="ion-margin-bottom">
+      <IonList className="ion-margin-bottom transparent-background">
         {inputFields.map((item) => (
           item.type == 'html' ? <IonRow key={item.key} className='ion-margin-start'> <IonText className={item.customClasses}>{item.content}</IonText>
             </IonRow> : 
-            <IonItem key={item.key}>
+            <IonItem key={item.key} className="transparent-background-item">
             <IonInput
               label={item.label}
               labelPlacement="floating"

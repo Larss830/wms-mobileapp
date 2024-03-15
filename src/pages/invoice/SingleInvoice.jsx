@@ -9,15 +9,14 @@ import {
   IonCol,
   IonItem,
   IonCard,
-  IonHeader,
+  IonInput,
   IonCardContent,
   IonIcon,
   IonModal,
   IonCardHeader,
-  IonButton,
   IonCardTitle,
   IonCardSubtitle,
-  IonBackdrop,
+  IonButton,
 } from "@ionic/react";
 import { React, useState } from "react";
 import { useLocation } from "react-router-dom";
@@ -47,9 +46,17 @@ const SingleInvoice = () => {
 
   const [showModal, setShowModal] = useState(false);
 
+  const [orderQtyValue, setOrderQtyValue] = useState(0);
+
   const handleCardClick = () => {
     setShowModal(true);
   };
+
+  const handleQtyValueChange = (event) => {
+    setOrderQtyValue(event.target.value);
+  };
+
+  const productRetailPrice = 15.00
 
   return (
     <IonPage className="invoices-single-page" id="main-content">
@@ -289,23 +296,25 @@ const SingleInvoice = () => {
                 <IonItem>
                   <IonGrid className="ion-padding">
                     <IonRow>
-                      <IonText>
+                      <IonText style={{display:'flex', marginBottom:'.5em'}}className="text-small">
                         Order Quantity:{" "}
-                        <span className="text-medium">20 boxes</span>
+                        <IonInput style={{flex:'1', minHeight:'1em', marginLeft:'.5em'}} type="number" min={0} placeholder={20} onIonChange={handleQtyValueChange}></IonInput>
                       </IonText>
-                    </IonRow>
-                    <IonRow>
-                      <IonText>
-                        Delivered Quantity:{" "}
-                        <span className="text-medium">20 boxes</span>
-                      </IonText>
-                      <IonText>
+                      <IonText className="text-small">
                         Retail Price:{" "}
-                        <span className="text-medium">$15.00</span>
+                        <span className="text-medium">${productRetailPrice}</span>
                       </IonText>
                     </IonRow>
                   </IonGrid>
                 </IonItem>
+                <IonRow className="ion-justify-content-end ion-margin-top">
+                  <IonText span className="text-small">
+                    Total Price: <span className="text-medium">${productRetailPrice * orderQtyValue}</span>
+                  </IonText>
+                </IonRow>
+                <IonRow className="ion-justify-content-center ion-margin-top">
+                  <IonButton shape="round" size="small" className="ion-padding-horizontal">Add Item</IonButton>
+                </IonRow>
               </IonGrid>
             </IonRow>
           </IonGrid>

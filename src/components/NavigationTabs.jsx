@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { IonTabs, IonTabBar, IonTabButton, IonIcon, IonFab, IonFabButton, IonFabList, IonImg } from "@ionic/react";
+import { IonTabs, IonTabBar, IonTabButton, IonIcon, IonFab, IonFabButton, IonFabList, IonImg, IonLabel } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import { IonRouterOutlet } from '@ionic/react';
 import { Link } from "react-router-dom";
@@ -43,12 +43,13 @@ const NavigationTabs = () => {
         <IonFabButton type="button" color="light">
           <IonImg src={wmsLogo} className="login-circle-top" />
         </IonFabButton>
-        <IonFabList side="top">
+        <IonFabList side="top" style={{minWidth:'150px'}}>
           {floatingTabRoutingButtons.map((button) => (
-            <Link to={button.tabLink} key={button.key}>
-              <IonFabButton type="button" color="light" size= "medium">
+            <Link to={button.tabLink} key={button.key} style={{display:'flex', flexWrap:'no-wrap', width:'150px', alignItems:'center'}} className='no-underline'>
+              <IonFabButton type="button" color="light" size= "small">
                 <IonIcon icon={button.tabIcon}></IonIcon>
               </IonFabButton>
+              <IonLabel color='dark' className='text-small'>fab label</IonLabel>
             </Link>
           ))}
         </IonFabList>

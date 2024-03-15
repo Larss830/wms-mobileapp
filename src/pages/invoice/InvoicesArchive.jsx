@@ -11,8 +11,12 @@ import {
   IonIcon,
   IonCard,
   IonText,
+  IonItemSliding,
+  IonItemOption,
+  IonItemOptions,
+  IonItem,
 } from "@ionic/react";
-import { menuOutline } from "ionicons/icons";
+import { menuOutline, trashOutline } from "ionicons/icons";
 import { Link } from "react-router-dom";
 import InvoicesData from "../../data/InvoicesData.js";
 
@@ -52,31 +56,70 @@ const InvoicesArchive = () => {
                         invoiceTime: item.invoiceTime,
                         invoicePrice: item.invoicePrice,
                         status: item.status,
-
                       },
                     }}
                     style={cardTextStyles}
                     key={item.invoiceNum}
                   >
-                    <IonCard className="ion-padding ion-margin-bottom box-shadow curved">
-                      <IonRow>
-                        <IonCol size="6">
-                          <IonText className="bold">
-                            INVOICE - {item.invoiceNum}
-                          </IonText>
-                          <br />
-                          <IonText style={cardTextStyles}>
-                            {item.invoiceDate}
-                          </IonText>
-                        </IonCol>
-                        <IonCol
-                          size="6"
-                          className="ion-text-right ion-align-items-center"
+                    <IonItemSliding style={{ width: "100%" }}>
+                      <IonItem lines="none">
+                        <IonCard
+                          className="box-shadow curved"
+                          style={{
+                            width: "100%",
+                            margin: "5px",
+                            minHeight: "76px",
+                          }}
                         >
-                          <IonText>${item.invoicePrice}</IonText>
-                        </IonCol>
-                      </IonRow>
-                    </IonCard>
+                          <IonRow style={{ minHeight: "76px" }}>
+                            <IonCol
+                              size="6"
+                              className=" ion-align-items-center"
+                              style={{
+                                display: "flex",
+                                flexWrap: "wrap",
+                                paddingLeft: "1em",
+                                gap: "10px",
+                              }}
+                            >
+                              <IonText className="bold">
+                                INVOICE - {item.invoiceNum}
+                              </IonText>
+                              {/* <br /> */}
+                              <IonText style={cardTextStyles}>
+                                {item.invoiceDate}
+                              </IonText>
+                            </IonCol>
+                            <IonCol
+                              size="6"
+                              className=" ion-align-items-center"
+                              style={{
+                                display: "flex",
+                                flexWrap: "wrap",
+                                paddingLeft: "1em",
+                                gap: "1em",
+                                justifyContent: 'flex-end'
+                              }}
+                            >
+                              <IonText>${item.invoicePrice}</IonText>
+                            </IonCol>
+                          </IonRow>
+                        </IonCard>
+                      </IonItem>
+                      <IonItemOptions>
+                        <IonItemOption
+                          style={{ width: "76px", minHeight: "76px" }}
+                          color="danger"
+                          className="curved"
+                        >
+                          <IonIcon
+                            style={{ width: "40px" }}
+                            icon={trashOutline}
+                            size="large"
+                          />
+                        </IonItemOption>
+                      </IonItemOptions>
+                    </IonItemSliding>
                   </Link>
                 ))}
               </IonCol>
